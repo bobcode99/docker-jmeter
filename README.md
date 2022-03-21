@@ -8,7 +8,7 @@ This repository contains coded example published on Blazemeter starting from [li
 Need download docker first.
 #### build docker images
 ```bash
-docker build -t jmeter-test:5.4.3 .
+docker build -t jmeter-test1:5.4.3 .
 docker build -t use-for-generate-rmi .
 ```
 #### create rmi key
