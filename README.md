@@ -12,29 +12,39 @@ docker build -t jmeter-test1:5.4.3 .
 
 cd docker/use-for-create-rmi-file
 docker build -t use-for-generate-rmi .
+cd ..
 ```
-#### create rmi key
+#### generate rmi key
 
 https://jmeter.apache.org/usermanual/remote-test.html#setup_ssl
 
 ```bash
+# run use-for-generate-rmi container to generate rmi key
 docker run --rm -it --volume $(pwd)/share_folder:/mnt/jmeter use-for-generate-rmi /bin/sh
 
+# inside the docker container
+# generate rmi_keystore.jks file, move to mount folder
 cd bin/
+# key in the information
 sh create-rmi-keystore.sh
 mv rmi_keystore.jks
 exit
 
+# delete docker image
 docker rmi -f use-for-generate-rmi
 ```
 
 > note: in windows can use Git Bash to execute `*.sh` files
+> 
 > https://stackoverflow.com/questions/26522789/how-to-run-sh-on-windows-command-prompt
 
 #### start test
 
 ```bash
+# give execute access
 chmod +x docker_distributed_jmeter.sh
+
+# run shell script start testing
 sh docker_distributed_jmeter.sh
 ```
 
