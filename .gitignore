@@ -3,8 +3,7 @@ tmp/
 client/
 server/
 compose/
-share_folder/
-
+rmi_keystore.jks
 # Mac
 _MACOSX/
 .DS_Store
