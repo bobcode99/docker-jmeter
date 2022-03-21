@@ -9,6 +9,8 @@ Need download docker first.
 #### build docker images
 ```bash
 docker build -t jmeter-test1:5.4.3 .
+
+cd docker/use-for-create-rmi-file
 docker build -t use-for-generate-rmi .
 ```
 #### create rmi key
