@@ -3,3 +3,15 @@ tmp/
 client/
 server/
 compose/
+share_folder/
+
+# Mac
+_MACOSX/
+.DS_Store
+
+# IntelliJ
+.idea
+
+# Vscode
+.vscode/
+.vim/
