@@ -1,8 +1,8 @@
 #!/bin/sh
 #1
-SUB_NET="172.18.0.0/16"
-CLIENT_IP=172.18.0.23
-declare -a SERVER_IPS=("172.18.0.101" "172.18.0.102" "172.18.0.103")
+SUB_NET="172.16.0.0/16"
+CLIENT_IP=172.16.0.23
+declare -a SERVER_IPS=("172.16.0.101" "172.16.0.102" "172.16.0.103")
  
 #2
 timestamp=$(date +%Y%m%d_%H%M%S)
@@ -20,6 +20,7 @@ docker network create --subnet=$SUB_NET $TEST_NET
 echo "Create slave servers"
 for IP_ADD in "${SERVER_IPS[@]}"
 do
+  echo "creating slave"
 	docker run \
 	-dit \
 	--net $TEST_NET --ip $IP_ADD \
