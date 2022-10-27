@@ -9,8 +9,8 @@ timestamp=$(date +%Y%m%d_%H%M%S)
 volume_path=$(pwd)/share_folder
 jmeter_path=/mnt/jmeter
 TEST_NET=jmeter-distributed-network
-docker_image_name=jmeter-test1:5.4.3
-test_plan_path_name=tests/test_plan_k6_test.jmx
+docker_image_name=jmeter-test-no-rmi11:5.5
+test_plan_path_name=tests/test_plan_http2_test.jmx
 
 #3
 echo "Create testing network"
@@ -29,7 +29,6 @@ do
 	${docker_image_name} \
 	-n -s \
 	-Jserver.rmi.localport=60000 \
-	-Jserver.rmi.ssl.keystore.file=${jmeter_path}/rmi_keystore.jks \
   -Djava.rmi.server.hostname=${IP_ADD} \
   -Djava.security.manager \
   -Djava.security.policy=${JMETER_HOME}/bin/java.policy \
@@ -45,7 +44,6 @@ docker run \
   --rm \
   ${docker_image_name} \
   -n -X \
-  -Jserver.rmi.ssl.keystore.file=${jmeter_path}/rmi_keystore.jks \
   -Djava.security.manager \
   -Djava.security.policy=${JMETER_HOME}/bin/java.policy \
   -Djmeter.home=${JMETER_HOME} \
