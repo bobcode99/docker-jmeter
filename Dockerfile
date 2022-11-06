@@ -22,9 +22,9 @@ RUN    apk update \
 	&& apk upgrade \
 	&& apk add ca-certificates \
 	&& update-ca-certificates \
-    && apk add --update openjdk11-jre tzdata curl unzip bash \
-    && cp /usr/share/zoneinfo/Asia/Taipei /etc/localtime \
-    && echo "Asia/Taipei" >  /etc/timezone \
+	&& apk add --update openjdk11-jre tzdata curl unzip bash \
+	&& cp /usr/share/zoneinfo/Asia/Taipei /etc/localtime \
+	&& echo "Asia/Taipei" >  /etc/timezone \
 	&& rm -rf /var/cache/apk/* \
 	&& mkdir -p /tmp/dependencies  \
 	&& curl -L --silent ${JMETER_DOWNLOAD_URL} >  /tmp/dependencies/apache-jmeter-${JMETER_VERSION}.tgz  \
@@ -40,13 +40,14 @@ RUN    apk update \
 # RUN curl -L ${JMETER_PLUGINS_DOWNLOAD_URL}/jmeter-plugins-casutg/2.10/jmeter-plugins-casutg-2.10.jar -o ${JMETER_PLUGINS_FOLDER}/jmeter-plugins-casutg-2.10.jar
 
 RUN wget ${JMETER_PLUGINS_DOWNLOAD_URL}/jmeter-plugins-manager/${JMETER_PLUGINS_MANAGER_VERSION}/jmeter-plugins-manager-${JMETER_PLUGINS_MANAGER_VERSION}.jar -O $JMETER_HOME/lib/ext/jmeter-plugins-manager-${JMETER_PLUGINS_MANAGER_VERSION}.jar \
- && wget ${JMETER_PLUGINS_DOWNLOAD_URL}/cmdrunner/$CMDRUNNER_VERSION/cmdrunner-$CMDRUNNER_VERSION.jar -O $JMETER_HOME/lib/cmdrunner-$CMDRUNNER_VERSION.jar \
- && java -cp $JMETER_HOME/lib/ext/jmeter-plugins-manager-${JMETER_PLUGINS_MANAGER_VERSION}.jar org.jmeterplugins.repository.PluginManagerCMDInstaller \
- && cd ${JMETER_HOME}/bin && ./PluginsManagerCMD.sh install jpgc-mergeresults \
- && cd ${JMETER_HOME}/bin && ./PluginsManagerCMD.sh install jpgc-synthesis \
- && cd ${JMETER_HOME}/bin && ./PluginsManagerCMD.sh install jpgc-cmd \
- && cd ${JMETER_HOME}/bin && ./PluginsManagerCMD.sh install jpgc-casutg \
- && cd ${JMETER_HOME}/bin && ./PluginsManagerCMD.sh install bzm-http2
+	&& wget ${JMETER_PLUGINS_DOWNLOAD_URL}/cmdrunner/$CMDRUNNER_VERSION/cmdrunner-$CMDRUNNER_VERSION.jar -O $JMETER_HOME/lib/cmdrunner-$CMDRUNNER_VERSION.jar \
+	&& java -cp $JMETER_HOME/lib/ext/jmeter-plugins-manager-${JMETER_PLUGINS_MANAGER_VERSION}.jar org.jmeterplugins.repository.PluginManagerCMDInstaller \
+	&& cd ${JMETER_HOME}/bin && ./PluginsManagerCMD.sh install jpgc-mergeresults \
+	&& cd ${JMETER_HOME}/bin && ./PluginsManagerCMD.sh install jpgc-synthesis \
+	&& cd ${JMETER_HOME}/bin && ./PluginsManagerCMD.sh install jpgc-cmd \
+	&& cd ${JMETER_HOME}/bin && ./PluginsManagerCMD.sh install jpgc-casutg \
+	&& cd ${JMETER_HOME}/bin && ./PluginsManagerCMD.sh install bzm-http2 \
+	&& cd ${JMETER_HOME}/bin && ./PluginsManagerCMD.sh install jpgc-dummy
 
 # 7
 ENV PATH $PATH:$JMETER_BIN
