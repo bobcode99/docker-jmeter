@@ -1,7 +1,7 @@
 FROM selenium/standalone-chrome:107.0
 
 ARG JMETER_VERSION="5.5"
-USER root
+
 # 4
 ENV JMETER_HOME /opt/apache-jmeter-${JMETER_VERSION}
 ENV JMETER_BIN  ${JMETER_HOME}/bin
@@ -11,6 +11,9 @@ ENV JMETER_PLUGINS_DOWNLOAD_URL http://insecure.repo1.maven.org/maven2/kg/apc
 ENV CMDRUNNER_VERSION 2.3
 ENV JMETER_PLUGINS_FOLDER ${JMETER_HOME}/lib/ext/
 ENV JMETER_PLUGINS_MANAGER_VERSION 1.8
+
+# using root to download things
+USER root
 
 # 5
 RUN apt-get update && \
@@ -33,6 +36,7 @@ ENV TZ="Asia/Taipei"
 # RUN wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 # RUN apt-get install ./google-chrome-stable_current_amd64.deb
 
+USER 1001
 # download plugin
 RUN wget ${JMETER_PLUGINS_DOWNLOAD_URL}/jmeter-plugins-manager/${JMETER_PLUGINS_MANAGER_VERSION}/jmeter-plugins-manager-${JMETER_PLUGINS_MANAGER_VERSION}.jar -O $JMETER_HOME/lib/ext/jmeter-plugins-manager-${JMETER_PLUGINS_MANAGER_VERSION}.jar \
 	&& wget ${JMETER_PLUGINS_DOWNLOAD_URL}/cmdrunner/$CMDRUNNER_VERSION/cmdrunner-$CMDRUNNER_VERSION.jar -O $JMETER_HOME/lib/cmdrunner-$CMDRUNNER_VERSION.jar \
