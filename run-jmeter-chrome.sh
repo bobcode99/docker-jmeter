@@ -11,3 +11,9 @@ docker run -it -v "${volume_path}":${jmeter_path} \
 	--rm \
 	${docker_image_name} \
     /bin/bash
+
+# jmeter_path=/mnt/jmeter
+# jmeter -n -t ${jmeter_path}/${test_plan_path_name} \
+#   -l ${jmeter_path}/client/result_${timestamp}.csv \
+#   -j ${jmeter_path}/client/jmeter_${timestamp}.log \
+#   -e -o ${jmeter_path}/client/html-report_${timestamp}
