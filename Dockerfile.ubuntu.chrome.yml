@@ -42,7 +42,9 @@ RUN wget ${JMETER_PLUGINS_DOWNLOAD_URL}/jmeter-plugins-manager/${JMETER_PLUGINS_
 	&& java -cp $JMETER_HOME/lib/ext/jmeter-plugins-manager-${JMETER_PLUGINS_MANAGER_VERSION}.jar org.jmeterplugins.repository.PluginManagerCMDInstaller \
 	&& cd ${JMETER_HOME}/bin && ./PluginsManagerCMD.sh install jpgc-casutg \
 	&& cd ${JMETER_HOME}/bin && ./PluginsManagerCMD.sh install bzm-http2 \
-	&& cd ${JMETER_HOME}/bin && ./PluginsManagerCMD.sh install jpgc-dummy
+	&& cd ${JMETER_HOME}/bin && ./PluginsManagerCMD.sh install jpgc-dummy \
+	&& cd ${JMETER_HOME}/bin && ./PluginsManagerCMD.sh install jpgc-webdriver
+
 
 ENV PATH $PATH:$JMETER_BIN
 
