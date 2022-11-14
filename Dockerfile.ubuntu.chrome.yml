@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM selenium/standalone-chrome:107.0
 
 ARG JMETER_VERSION="5.5"
 
@@ -13,23 +13,25 @@ ENV JMETER_PLUGINS_FOLDER ${JMETER_HOME}/lib/ext/
 ENV JMETER_PLUGINS_MANAGER_VERSION 1.8
 
 # 5
-RUN    apt-get update \
-	&& apt-get upgrade \
-	&& apt-get add ca-certificates \
-	&& update-ca-certificates \
-	&& apt-get add --update openjdk11-jre tzdata curl unzip bash \
-	&& cp /usr/share/zoneinfo/Asia/Taipei /etc/localtime \
-	&& echo "Asia/Taipei" >  /etc/timezone \
-	&& mkdir -p /tmp/dependencies  \
-	&& curl -L --silent ${JMETER_DOWNLOAD_URL} >  /tmp/dependencies/apache-jmeter-${JMETER_VERSION}.tgz  \
-	&& mkdir -p /opt  \
-	&& tar -xzf /tmp/dependencies/apache-jmeter-${JMETER_VERSION}.tgz -C /opt  \
-	&& rm -rf /tmp/dependencies
+RUN apt-get update && \
+	apt-get upgrade -y && \
+	apt-get install ca-certificates -yq && \
+	update-ca-certificates && \
+	apt-get install openjdk-11-jdk curl unzip bash -yq && \
+	apt-get install -yq tzdata	 && \
+    ln -fs /usr/share/zoneinfo/Asia/Taipei /etc/localtime	 && \
+    dpkg-reconfigure -f noninteractive tzdata && \
+	mkdir -p /tmp/dependencies && \
+	curl -L --silent ${JMETER_DOWNLOAD_URL} >  /tmp/dependencies/apache-jmeter-${JMETER_VERSION}.tgz && \
+	mkdir -p /opt && \
+	tar -xzf /tmp/dependencies/apache-jmeter-${JMETER_VERSION}.tgz -C /opt  && \
+	rm -rf /tmp/dependencies
 
+ENV TZ="Asia/Taipei"
 # download chrome
-RUN apt-get install -y wget
-RUN wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-RUN apt-get install ./google-chrome-stable_current_amd64.deb
+# RUN apt-get install -y wget
+# RUN wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+# RUN apt-get install ./google-chrome-stable_current_amd64.deb
 
 # download plugin
 RUN wget ${JMETER_PLUGINS_DOWNLOAD_URL}/jmeter-plugins-manager/${JMETER_PLUGINS_MANAGER_VERSION}/jmeter-plugins-manager-${JMETER_PLUGINS_MANAGER_VERSION}.jar -O $JMETER_HOME/lib/ext/jmeter-plugins-manager-${JMETER_PLUGINS_MANAGER_VERSION}.jar \
