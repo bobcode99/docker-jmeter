@@ -1,0 +1,48 @@
+FROM ubuntu:20.04
+
+ARG JMETER_VERSION="5.5"
+
+# 4
+ENV JMETER_HOME /opt/apache-jmeter-${JMETER_VERSION}
+ENV JMETER_BIN  ${JMETER_HOME}/bin
+ENV MIRROR_HOST https://archive.apache.org/dist/jmeter
+ENV JMETER_DOWNLOAD_URL ${MIRROR_HOST}/binaries/apache-jmeter-${JMETER_VERSION}.tgz
+ENV JMETER_PLUGINS_DOWNLOAD_URL http://insecure.repo1.maven.org/maven2/kg/apc
+ENV CMDRUNNER_VERSION 2.3
+ENV JMETER_PLUGINS_FOLDER ${JMETER_HOME}/lib/ext/
+ENV JMETER_PLUGINS_MANAGER_VERSION 1.8
+
+# 5
+RUN    apt-get update \
+	&& apt-get upgrade \
+	&& apt-get add ca-certificates \
+	&& update-ca-certificates \
+	&& apt-get add --update openjdk11-jre tzdata curl unzip bash \
+	&& cp /usr/share/zoneinfo/Asia/Taipei /etc/localtime \
+	&& echo "Asia/Taipei" >  /etc/timezone \
+	&& mkdir -p /tmp/dependencies  \
+	&& curl -L --silent ${JMETER_DOWNLOAD_URL} >  /tmp/dependencies/apache-jmeter-${JMETER_VERSION}.tgz  \
+	&& mkdir -p /opt  \
+	&& tar -xzf /tmp/dependencies/apache-jmeter-${JMETER_VERSION}.tgz -C /opt  \
+	&& rm -rf /tmp/dependencies
+
+# download chrome
+RUN apt-get install -y wget
+RUN wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+RUN apt-get install ./google-chrome-stable_current_amd64.deb
+
+# download plugin
+RUN wget ${JMETER_PLUGINS_DOWNLOAD_URL}/jmeter-plugins-manager/${JMETER_PLUGINS_MANAGER_VERSION}/jmeter-plugins-manager-${JMETER_PLUGINS_MANAGER_VERSION}.jar -O $JMETER_HOME/lib/ext/jmeter-plugins-manager-${JMETER_PLUGINS_MANAGER_VERSION}.jar \
+	&& wget ${JMETER_PLUGINS_DOWNLOAD_URL}/cmdrunner/$CMDRUNNER_VERSION/cmdrunner-$CMDRUNNER_VERSION.jar -O $JMETER_HOME/lib/cmdrunner-$CMDRUNNER_VERSION.jar \
+	&& java -cp $JMETER_HOME/lib/ext/jmeter-plugins-manager-${JMETER_PLUGINS_MANAGER_VERSION}.jar org.jmeterplugins.repository.PluginManagerCMDInstaller \
+	&& cd ${JMETER_HOME}/bin && ./PluginsManagerCMD.sh install jpgc-casutg \
+	&& cd ${JMETER_HOME}/bin && ./PluginsManagerCMD.sh install bzm-http2 \
+	&& cd ${JMETER_HOME}/bin && ./PluginsManagerCMD.sh install jpgc-dummy
+
+ENV PATH $PATH:$JMETER_BIN
+
+COPY launch.sh /
+COPY jmeter.properties ${JMETER_BIN}
+COPY java.policy ${JMETER_HOME}/bin
+
+WORKDIR ${JMETER_HOME}
