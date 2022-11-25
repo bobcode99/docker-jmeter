@@ -1,4 +1,7 @@
-FROM selenium/standalone-chrome:107.0
+# FROM selenium/standalone-chrome:107.0
+FROM selenium/standalone-chrome-debug
+EXPOSE 5900-6000
+EXPOSE 4444-4544
 
 ARG JMETER_VERSION="5.5"
 
@@ -53,3 +56,4 @@ COPY jmeter.properties ${JMETER_BIN}
 COPY java.policy ${JMETER_HOME}/bin
 
 WORKDIR ${JMETER_HOME}
+ENTRYPOINT ["/launch.sh"]
