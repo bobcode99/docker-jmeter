@@ -56,4 +56,7 @@ COPY jmeter.properties ${JMETER_BIN}
 COPY java.policy ${JMETER_HOME}/bin
 
 WORKDIR ${JMETER_HOME}
+
+RUN ["chmod", "+x", "/launch.sh"]
+
 ENTRYPOINT ["/launch.sh"]
