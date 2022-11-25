@@ -2,11 +2,11 @@
 
 This repository contains coded example published on Blazemeter starting from [link](https://www.blazemeter.com/blog/make-use-of-docker-with-jmeter-learn-how)
 
-### Steps
+## Steps
 
 Need download docker first.
 
-#### build docker images
+### build docker images
 
 ```bash
 docker build -t jmeter-test-no-rmi11:5.5 .
@@ -20,7 +20,7 @@ docker build -t jmeter-test-no-rmi11:5.5 .
 >
 > https://stackoverflow.com/questions/26522789/how-to-run-sh-on-windows-command-prompt
 
-#### start test
+### start test
 
 ```bash
 # give execute access
@@ -30,13 +30,23 @@ chmod +x docker_distributed_jmeter.sh
 sh docker_distributed_jmeter.sh
 ```
 
-### webdriver note
+## webdriver note
 
-#### build docker images (with chromedriver buildin)
+> Note that if using selenium/standalone-chrome:107.0, `ChromeDriverConfig.disable_dev_shm_usage` need set to be true.
+> https://stackoverflow.com/a/67154031
+
+### build docker images (with chromedriver buildin)
 
 ```bash
 docker build -t jmeter-chrome:5.5 -f ./Dockerfile.ubuntu.chrome.yml .
 ```
+
+### run test:
+
+```bash
+./run-jmeter-chrome.sh
+```
+
 
 Ref:
 
