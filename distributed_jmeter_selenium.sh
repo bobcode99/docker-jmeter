@@ -9,8 +9,8 @@ timestamp=$(date +%Y%m%d_%H%M%S)
 volume_path=$(pwd)/share_folder
 jmeter_path=/mnt/jmeter
 TEST_NET=jmeter-distributed-network
-docker_image_name=jmeter-test-no-rmi11:5.5
-test_plan_path_name=tests/test_plan_http2_test.jmx
+docker_image_name=jmeter-chrome:5.5
+test_plan_path_name=tests/selenium_test_plan.jmx
 
 #3
 echo "Create testing network"
