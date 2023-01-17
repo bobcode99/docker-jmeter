@@ -1,0 +1,350 @@
+{
+  "chrome 109.0.5414.87": [
+    {
+      "version": {
+        "sideex": [
+          3,
+          7,
+          3
+        ],
+        "format": [
+          1,
+          0,
+          1
+        ]
+      },
+      "title": "20230116 22-05-21",
+      "type": "chrome",
+      "browser": "chrome 109.0.5414.87",
+      "platform": "mac os x",
+      "deviceName": "unknown",
+      "lang": null,
+      "inputFile": "/Users/bob/sideex-things/webservice-testcase/test-jobs-folder1/a8651798-fda9-4132-ab10-166f8d0f1776/inputs/suites/openSideexDownload.json",
+      "startTime": "20230116 22:05:21",
+      "endTime": "20230116 22:05:37",
+      "failureCaseNum": 0,
+      "failureSuiteNum": 0,
+      "successCaseNum": 1,
+      "successSuiteNum": 1,
+      "logs": [
+        {
+          "type": "info",
+          "message": "Playing test suite openSideexDownload"
+        },
+        {
+          "type": "info",
+          "message": "Playing test case testcase1"
+        },
+        {
+          "type": "info",
+          "message": "Initializing: | open | https://sideex.io/ |  |"
+        },
+        {
+          "type": "info",
+          "message": "Executing: | open | https://sideex.io/ |  |"
+        },
+        {
+          "type": "info",
+          "message": "Initializing: | clickAt | //div[@id='root']/div[1]/div[1]/nav[1]/div[1]/ul[1]/li[1]/a[1] | 51,28 |"
+        },
+        {
+          "type": "info",
+          "message": "Executing: | clickAt | //div[@id='root']/div[1]/div[1]/nav[1]/div[1]/ul[1]/li[1]/a[1] | 51,28 |"
+        },
+        {
+          "type": "info",
+          "message": "Initializing: | verifyTitle | SideeX | Auto-First Record-Playback Web Test Automation |  |"
+        },
+        {
+          "type": "info",
+          "message": "Executing: | verifyTitle | SideeX | Auto-First Record-Playback Web Test Automation |  |"
+        },
+        {
+          "type": "info",
+          "message": "Initializing: | verifyText | //div[@id='root']/div[1]/div[2]/div[1]/div[1]/h2[1] | Download |"
+        },
+        {
+          "type": "info",
+          "message": "Executing: | verifyText | //div[@id='root']/div[1]/div[2]/div[1]/div[1]/h2[1] | Download |"
+        },
+        {
+          "type": "info",
+          "message": "Test case passed"
+        }
+      ],
+      "status": "completed",
+      "suites": [
+        {
+          "title": "openSideexDownload",
+          "idText": "suite-4",
+          "status": "success",
+          "cases": [
+            0
+          ]
+        }
+      ],
+      "cases": [
+        {
+          "title": "testcase1",
+          "idText": "case-4",
+          "suiteIdText": "suite-4",
+          "status": "success",
+          "localVars": [],
+          "globalVars": [
+            {
+              "name": "numberOfRecords",
+              "value": "3"
+            },
+            {
+              "name": "record.0.name",
+              "value": "Adam"
+            },
+            {
+              "name": "record.0.id",
+              "value": "001"
+            },
+            {
+              "name": "record.0.birthday",
+              "value": "1997-02-20"
+            },
+            {
+              "name": "record.1.name",
+              "value": "Sarah"
+            },
+            {
+              "name": "record.1.id",
+              "value": "002"
+            },
+            {
+              "name": "record.1.birthday",
+              "value": "1986-08-16"
+            },
+            {
+              "name": "record.2.name",
+              "value": "Taylor"
+            },
+            {
+              "name": "record.2.id",
+              "value": "003"
+            },
+            {
+              "name": "record.2.birthday",
+              "value": "1989-12-13"
+            }
+          ],
+          "records": [
+            {
+              "name": "open",
+              "target": "https://sideex.io/",
+              "value": "",
+              "status": "success",
+              "time": 15146,
+              "valData": [
+                {
+                  "name": "numberOfRecords",
+                  "value": "3"
+                },
+                {
+                  "name": "record.0.name",
+                  "value": "Adam"
+                },
+                {
+                  "name": "record.0.id",
+                  "value": "001"
+                },
+                {
+                  "name": "record.0.birthday",
+                  "value": "1997-02-20"
+                },
+                {
+                  "name": "record.1.name",
+                  "value": "Sarah"
+                },
+                {
+                  "name": "record.1.id",
+                  "value": "002"
+                },
+                {
+                  "name": "record.1.birthday",
+                  "value": "1986-08-16"
+                },
+                {
+                  "name": "record.2.name",
+                  "value": "Taylor"
+                },
+                {
+                  "name": "record.2.id",
+                  "value": "003"
+                },
+                {
+                  "name": "record.2.birthday",
+                  "value": "1989-12-13"
+                }
+              ]
+            },
+            {
+              "name": "clickAt",
+              "target": "//div[@id='root']/div[1]/div[1]/nav[1]/div[1]/ul[1]/li[1]/a[1]",
+              "value": "51,28",
+              "status": "success",
+              "time": 1345,
+              "metadata": {
+                "websiteTitle": "SideeX | Auto-First Record-Playback Web Test Automation",
+                "websiteUrl": "https://sideex.io/"
+              },
+              "valData": [
+                {
+                  "name": "numberOfRecords",
+                  "value": "3"
+                },
+                {
+                  "name": "record.0.name",
+                  "value": "Adam"
+                },
+                {
+                  "name": "record.0.id",
+                  "value": "001"
+                },
+                {
+                  "name": "record.0.birthday",
+                  "value": "1997-02-20"
+                },
+                {
+                  "name": "record.1.name",
+                  "value": "Sarah"
+                },
+                {
+                  "name": "record.1.id",
+                  "value": "002"
+                },
+                {
+                  "name": "record.1.birthday",
+                  "value": "1986-08-16"
+                },
+                {
+                  "name": "record.2.name",
+                  "value": "Taylor"
+                },
+                {
+                  "name": "record.2.id",
+                  "value": "003"
+                },
+                {
+                  "name": "record.2.birthday",
+                  "value": "1989-12-13"
+                }
+              ]
+            },
+            {
+              "name": "verifyTitle",
+              "target": "SideeX | Auto-First Record-Playback Web Test Automation",
+              "value": "",
+              "status": "success",
+              "time": 22,
+              "metadata": {
+                "websiteTitle": "SideeX | Auto-First Record-Playback Web Test Automation",
+                "websiteUrl": "https://sideex.io/download/"
+              },
+              "valData": [
+                {
+                  "name": "numberOfRecords",
+                  "value": "3"
+                },
+                {
+                  "name": "record.0.name",
+                  "value": "Adam"
+                },
+                {
+                  "name": "record.0.id",
+                  "value": "001"
+                },
+                {
+                  "name": "record.0.birthday",
+                  "value": "1997-02-20"
+                },
+                {
+                  "name": "record.1.name",
+                  "value": "Sarah"
+                },
+                {
+                  "name": "record.1.id",
+                  "value": "002"
+                },
+                {
+                  "name": "record.1.birthday",
+                  "value": "1986-08-16"
+                },
+                {
+                  "name": "record.2.name",
+                  "value": "Taylor"
+                },
+                {
+                  "name": "record.2.id",
+                  "value": "003"
+                },
+                {
+                  "name": "record.2.birthday",
+                  "value": "1989-12-13"
+                }
+              ]
+            },
+            {
+              "name": "verifyText",
+              "target": "//div[@id='root']/div[1]/div[2]/div[1]/div[1]/h2[1]",
+              "value": "Download",
+              "status": "success",
+              "time": 20,
+              "metadata": {
+                "websiteTitle": "SideeX | Auto-First Record-Playback Web Test Automation",
+                "websiteUrl": "https://sideex.io/download/"
+              },
+              "valData": [
+                {
+                  "name": "numberOfRecords",
+                  "value": "3"
+                },
+                {
+                  "name": "record.0.name",
+                  "value": "Adam"
+                },
+                {
+                  "name": "record.0.id",
+                  "value": "001"
+                },
+                {
+                  "name": "record.0.birthday",
+                  "value": "1997-02-20"
+                },
+                {
+                  "name": "record.1.name",
+                  "value": "Sarah"
+                },
+                {
+                  "name": "record.1.id",
+                  "value": "002"
+                },
+                {
+                  "name": "record.1.birthday",
+                  "value": "1986-08-16"
+                },
+                {
+                  "name": "record.2.name",
+                  "value": "Taylor"
+                },
+                {
+                  "name": "record.2.id",
+                  "value": "003"
+                },
+                {
+                  "name": "record.2.birthday",
+                  "value": "1989-12-13"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "snapshot": {}
+    }
+  ]
+}
