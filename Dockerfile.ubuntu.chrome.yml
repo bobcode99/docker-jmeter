@@ -54,6 +54,9 @@ ENV PATH $PATH:$JMETER_BIN
 COPY launch.sh /
 COPY jmeter.properties ${JMETER_BIN}
 COPY java.policy ${JMETER_HOME}/bin
+COPY testsampler-jmeter-plugin-1.0-SNAPSHOT.jar ${JMETER_HOME}/lib/ext
+COPY ./share_folder/test-json/person1.json /usr/local
+COPY ./share_folder/test-json/person2.json /usr/local
 
 WORKDIR ${JMETER_HOME}
 

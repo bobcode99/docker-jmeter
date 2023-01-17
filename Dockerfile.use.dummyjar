@@ -56,9 +56,9 @@ ENV PATH $PATH:$JMETER_BIN
 COPY launch.sh /
 COPY jmeter.properties ${JMETER_BIN}
 COPY java.policy ${JMETER_HOME}/bin
-COPY jmeter-bzm-dummy-1.0.jar ${JMETER_HOME}/lib/ext
-COPY ./share_folder/test-image/alberto-restifo-cFplR9ZGnAk-unsplash.jpg /usr/local
-COPY ./share_folder/test-image/taylor-van-riper-yQorCngxzwI-unsplash.jpg /usr/local
+COPY testsampler-jmeter-plugin-1.0-SNAPSHOT-jar-with-dependencies.jar ${JMETER_HOME}/lib/ext
+COPY ./share_folder/test-json/person1.json /usr/local
+COPY ./share_folder/test-json/person2.json /usr/local
 
 
 RUN ["chmod", "+x", "/launch.sh"]
