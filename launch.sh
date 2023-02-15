@@ -1,5 +1,7 @@
 #!/bin/bash
 
+nohup java -jar /opt/selenium/selenium-server.jar standalone --config /opt/selenium/selenium-config.toml >java-server.log &
+
 #
 # This script expects the standdard JMeter command parameters.
 #
@@ -31,3 +33,4 @@ echo "$CMD args=$@"
 jmeter $@
 echo "END Running Jmeter on `date`"
 
+# /bin/bash

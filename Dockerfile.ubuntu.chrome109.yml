@@ -1,4 +1,4 @@
-FROM selenium/standalone-chrome:107.0
+FROM selenium/standalone-chrome:109.0-chromedriver-109.0
 # FROM selenium/standalone-chrome-debug
 # EXPOSE 5900-6000
 # EXPOSE 4444-4544
@@ -18,7 +18,7 @@ ENV JMETER_PLUGINS_MANAGER_VERSION 1.8
 # using root to download things
 USER root
 
-RUN echo nameserver 8.8.8.8 | sudo tee /etc/resolv.conf
+RUN echo nameserver 1.1.1.1 | sudo tee /etc/resolv.conf
 # 5
 RUN apt-get update && \
 	apt-get upgrade -y && \
