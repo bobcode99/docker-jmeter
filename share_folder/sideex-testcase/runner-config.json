@@ -1,0 +1,37 @@
+{
+    "input": {
+        "testSuites": ["./WHILE_CLICK.json"]
+    },
+    "play": {
+        "mode": 2,
+        "period": {
+            "time": -1,
+            "maxNum": -1
+        }
+    },
+    "report": {
+        "path": "./reportTest",
+        "type":"all",
+        "snapshot": 2,
+        "snapshotQuality": 20
+    },
+    "webdriver": {
+        "configs": [
+            {
+                "serverUrl": "http://localhost:4445",
+                "type": "selenium",
+                "browsers": [
+                    {
+                        "active": true,
+                        "capability": {
+                            "browserName": "chrome",
+                            "goog:chromeOptions": {
+                                "args": ["headless", "disable-gpu", "window-size=1080,720", "no-sandbox"]
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

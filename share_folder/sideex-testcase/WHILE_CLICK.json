@@ -1,0 +1,236 @@
+{
+  "time": 1675833072015,
+  "version": {
+    "sideex": [
+      4,
+      0,
+      0
+    ],
+    "format": [
+      2,
+      0,
+      2
+    ]
+  },
+  "suites": [
+    {
+      "title": "WHILE_CLICK",
+      "description": "",
+      "enableOnPlaying": true,
+      "cases": [
+        {
+          "title": "WHILE",
+          "description": "",
+          "enableOnPlaying": true,
+          "networkSpeed": 6.53,
+          "records": [
+            {
+              "name": "open",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "https://sideex.github.io/example/webpage_under_test/click-to-increase-button-size.html"
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": ""
+                  }
+                ],
+                "tac": ""
+              },
+              "description": "",
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false,
+              "indent": 0
+            },
+            {
+              "name": "COMMENT",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "The WHILE loop will loop for 3 times since the value is set to 3"
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": ""
+                  }
+                ],
+                "tac": ""
+              },
+              "description": "",
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false,
+              "indent": 0
+            },
+            {
+              "name": "WHILE",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "1==1"
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "15"
+                  }
+                ],
+                "tac": ""
+              },
+              "description": "",
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false,
+              "indent": 0
+            },
+            {
+              "name": "clickAt",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "id",
+                    "value": "id=demoClickAtButton"
+                  },
+                  {
+                    "type": "xpath:position",
+                    "value": "//button[1]"
+                  },
+                  {
+                    "type": "xpath:attributes",
+                    "value": "//button[@id='demoClickAtButton']"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=#demoClickAtButton"
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "102,63"
+                  }
+                ],
+                "tac": ""
+              },
+              "description": "",
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false,
+              "indent": 0
+            },
+            {
+              "name": "COMMENT",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "END commands should be placed at the end of IF-ELSE/WHILE/TRY-CATCH blocks."
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": ""
+                  }
+                ],
+                "tac": ""
+              },
+              "description": "",
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false,
+              "indent": 0
+            },
+            {
+              "name": "END",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": ""
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": ""
+                  }
+                ],
+                "tac": ""
+              },
+              "description": "",
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false,
+              "indent": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

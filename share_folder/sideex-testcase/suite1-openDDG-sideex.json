@@ -1,0 +1,364 @@
+{
+  "time": 1670305781288,
+  "version": {
+    "sideex": [
+      3,
+      7,
+      2
+    ],
+    "format": [
+      2,
+      0,
+      0
+    ]
+  },
+  "suites": [
+    {
+      "title": "suite1-openDDG-sideex",
+      "description": "",
+      "enableOnPlaying": true,
+      "cases": [
+        {
+          "title": "test1-ddgToSideex",
+          "description": "",
+          "enableOnPlaying": true,
+          "networkSpeed": 181.26,
+          "records": [
+            {
+              "name": "open",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "https://duckduckgo.com/"
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": ""
+                  }
+                ],
+                "tac": ""
+              },
+              "description": "",
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            },
+            {
+              "name": "setViewportSize",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": ""
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "1222,742"
+                  }
+                ],
+                "tac": ""
+              },
+              "description": "",
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            },
+            {
+              "name": "sendKeys",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "id",
+                    "value": "id=search_form_input_homepage"
+                  },
+                  {
+                    "type": "name",
+                    "value": "name=q"
+                  },
+                  {
+                    "type": "xpath:idRelative",
+                    "value": "//form[@id='search_form_homepage']/input[1]"
+                  },
+                  {
+                    "type": "xpath:position",
+                    "value": "//input[1]"
+                  },
+                  {
+                    "type": "xpath:attributes",
+                    "value": "//input[@id='search_form_input_homepage']"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=#search_form_input_homepage"
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "sideex"
+                  }
+                ],
+                "tac": ""
+              },
+              "description": "",
+              "pwt": {
+                "pbw": -2616,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 1
+              },
+              "comment": false
+            },
+            {
+              "name": "clickAt",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "id",
+                    "value": "id=search_button_homepage"
+                  },
+                  {
+                    "type": "xpath:idRelative",
+                    "value": "//form[@id='search_form_homepage']/input[2]"
+                  },
+                  {
+                    "type": "xpath:position",
+                    "value": "//input[2]"
+                  },
+                  {
+                    "type": "xpath:attributes",
+                    "value": "//input[@id='search_button_homepage']"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=#search_button_homepage"
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": ""
+                  }
+                ],
+                "tac": ""
+              },
+              "description": "",
+              "pwt": {
+                "pbw": 6,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            },
+            {
+              "name": "clickAt",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "xpath:dataRelative",
+                    "value": "//a[@data-testid='result-title-a']/span[1]"
+                  },
+                  {
+                    "type": "xpath:idRelative",
+                    "value": "//article[@id='r1-0']/div[2]/h2[1]/a[1]/span[1]"
+                  },
+                  {
+                    "type": "xpath:position",
+                    "value": "//h2[1]/a[1]/span[1]"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=span.EKtkFWMYpwzMKOYr0GYm.LQVY1Jpkk8nyJ6HBWKAk"
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "498,15"
+                  }
+                ],
+                "tac": ""
+              },
+              "description": "",
+              "pwt": {
+                "pbw": 4,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            },
+            {
+              "name": "rightClickAt",
+              "target": {
+                "usedIndex": 1,
+                "options": [
+                  {
+                    "type": "xpath:idRelative",
+                    "value": "//div[@id='root']/div[1]/div[2]/div[1]/div[1]/div[1]/h1[1]"
+                  },
+                  {
+                    "type": "xpath:position",
+                    "value": "//h1[1]"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=h1"
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "195,18"
+                  }
+                ],
+                "tac": ""
+              },
+              "description": "",
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            },
+            {
+              "name": "scrollWheel",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "xpath:idRelative",
+                    "value": "//div[@id='root']/div[1]/div[2]/div[1]/img[1]"
+                  },
+                  {
+                    "type": "xpath:position",
+                    "value": "//div[2]/div[1]/img[1]"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=img.home-bg"
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "{\"StartPoint\":{\"X\":705,\"Y\":115},\"Delta\":[{\"TD\":0,\"X\":0,\"Y\":26,\"Z\":0,\"M\":0},{\"TD\":1,\"X\":0,\"Y\":222,\"Z\":0,\"M\":0}]}"
+                  }
+                ],
+                "tac": ""
+              },
+              "description": "",
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            },
+            {
+              "name": "clickAt",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "xpath:idRelative",
+                    "value": "//div[@id='root']/div[1]/div[2]/div[6]/footer[1]/div[1]/div[1]/a[2]"
+                  },
+                  {
+                    "type": "xpath:position",
+                    "value": "//div[1]/div[1]/a[2]"
+                  },
+                  {
+                    "type": "xpath:link",
+                    "value": "//a[contains(text(),'Contributors')]"
+                  },
+                  {
+                    "type": "xpath:href",
+                    "value": "//a[@href='/contributors/']"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=div.col-md-4.col-lg-3.footer-content > a:nth-child(3)"
+                  },
+                  {
+                    "type": "link",
+                    "value": "link=Contributors"
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "56,18"
+                  }
+                ],
+                "tac": ""
+              },
+              "description": "",
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
