@@ -7,7 +7,7 @@ ARG JMETER_VERSION="5.5"
 
 # 4
 ENV JMETER_HOME /opt/apache-jmeter-${JMETER_VERSION}
-ENV JMETER_BIN  ${JMETER_HOME}/bin
+ENV JMETER_BIN ${JMETER_HOME}/bin
 ENV MIRROR_HOST https://archive.apache.org/dist/jmeter
 ENV JMETER_DOWNLOAD_URL ${MIRROR_HOST}/binaries/apache-jmeter-${JMETER_VERSION}.tgz
 ENV JMETER_PLUGINS_DOWNLOAD_URL http://insecure.repo1.maven.org/maven2/kg/apc
@@ -55,7 +55,7 @@ ENV PATH $PATH:$JMETER_BIN
 COPY launch.sh /
 COPY jmeter.properties ${JMETER_BIN}
 COPY java.policy ${JMETER_HOME}/bin
-COPY sideexsampler-jmeter-plugin-1.0-SNAPSHOT-jar-with-dependencies.jar ${JMETER_HOME}/lib/ext
+COPY sideexsampler-jmeter-plugins-1.0.0-jar-with-dependencies.jar ${JMETER_HOME}/lib/ext
 COPY sideex-runner-linux-x64 /opt/bin
 COPY selenium-config.toml /opt/selenium
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 
-nohup java -jar /opt/selenium/selenium-server.jar standalone --config /opt/selenium/selenium-config.toml >java-server.log &
-
+# nohup java -jar /opt/selenium/selenium-server.jar standalone --config /opt/selenium/selenium-config.toml >java-server.log &
+nohup /opt/bin/start-selenium-standalone.sh &
 #
 # This script expects the standdard JMeter command parameters.
 #
