@@ -14,3 +14,5 @@ _MACOSX/
 # Vscode
 .vscode/
 .vim/
+
+sideex-runner-linux-x64
