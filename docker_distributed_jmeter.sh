@@ -25,6 +25,7 @@ do
   echo "creating slave"
 	docker run \
 	-dit \
+  --shm-size="2g" \
 	--net $TEST_NET --ip $IP_ADD \
 	-v "${volume_path}":${jmeter_path} \
 	--rm \
