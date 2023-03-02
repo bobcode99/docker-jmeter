@@ -33,7 +33,7 @@
       </ThreadGroup>
       <hashTree>
         <team.sideex.sampler.SideexSampler guiclass="team.sideex.sampler.SideexSamplerGui" testclass="team.sideex.sampler.SideexSampler" testname="@sideex - SideexSampler" enabled="true">
-          <stringProp name="TC_FILE_PATH">/mnt/jmeter/sideex-testcase/WHILE_CLICK.json</stringProp>
+          <stringProp name="TC_FILE_PATH">/mnt/jmeter/sideex-testcase/share_folder/suite-pchome.json</stringProp>
           <stringProp name="BROWSER_SELECT">Chrome</stringProp>
         </team.sideex.sampler.SideexSampler>
         <hashTree/>
